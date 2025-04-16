@@ -13,3 +13,15 @@ CREATE TABLE `commerce`.`coupons`
     `updated_at`           datetime(6)  NOT NULL COMMENT '수정일',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COMMENT '쿠폰';
+
+CREATE TABLE `coupon`.`coupon_issues`
+(
+    `id`         BIGINT(20)  NOT NULL AUTO_INCREMENT,
+    `coupon_id`  BIGINT(20)  NOT NULL COMMENT '쿠폰 ID',
+    `user_id`    BIGINT(20)  NOT NULL COMMENT '유저 ID',
+    `issue_at`   datetime(6) NOT NULL COMMENT '발급 일시',
+    `use_at`     datetime(6) NULL COMMENT '사용 일시',
+    `created_at` datetime(6) NOT NULL COMMENT '생성 일시',
+    `updated_at` datetime(6) NOT NULL COMMENT '수정 일시',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COMMENT '쿠폰 발행';
