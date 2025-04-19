@@ -19,10 +19,12 @@ repositories {
 
 dependencies {
     implementation(project(":coupon-core"))
-//    runtimeOnly("com.h2database:h2")
-
     runtimeOnly("com.mysql:mysql-connector-j")
     implementation("org.springframework.boot:spring-boot-starter-web")
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 

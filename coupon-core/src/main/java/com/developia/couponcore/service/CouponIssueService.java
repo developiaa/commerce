@@ -6,7 +6,6 @@ import com.developia.couponcore.domain.exception.CouponIssueException;
 import com.developia.couponcore.domain.exception.CouponNotFoundException;
 import com.developia.couponcore.domain.exception.ErrorCode;
 import com.developia.couponcore.repository.CouponIssueJpaRepository;
-import com.developia.couponcore.repository.CouponJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
