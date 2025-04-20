@@ -37,9 +37,6 @@ public class Coupon extends BaseTime {
     private Integer minAvailableAmount;
 
     @Column(nullable = false)
-    private Integer maxAvailableAmount;
-
-    @Column(nullable = false)
     private LocalDateTime issueStartedAt;
 
     @Column(nullable = false)

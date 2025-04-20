@@ -21,7 +21,7 @@ CREATE TABLE `commerce`.`coupon_issues`
     `coupon_id`  BIGINT(20)   NOT NULL COMMENT '쿠폰 ID',
     `user_id`    BIGINT(20)   NOT NULL COMMENT '유저 ID',
     `issue_at`   datetime(6)  NOT NULL COMMENT '발급 일시',
-    `use_at`     datetime(6)  NULL COMMENT '사용 일시',
+    `used_at`     datetime(6)  NULL COMMENT '사용 일시',
     `created_at` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) COMMENT '생성일',
     `updated_at` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6) COMMENT '수정일',
     PRIMARY KEY (`id`)
