@@ -30,6 +30,17 @@ public class CouponIssueService {
         saveCouponIssue(couponId, userId);
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void issueWithLock(Long couponId, Long userId) {
+        // 쿠폰이 존재하는 지 확인
+        Coupon findCoupon = couponReadService.findCouponWithLock(couponId)
+                .orElseThrow(() -> new CouponNotFoundException(ErrorCode.NOT_FOUND));
+        // 쿠폰 차감
+        findCoupon.issue(LocalDateTime.now());
+        // 쿠폰 발행 적용
+        saveCouponIssue(couponId, userId);
+    }
+
     @Transactional
     public void saveCouponIssue(Long couponId, Long userId) {
         checkAlreadyIssuance(couponId, userId);

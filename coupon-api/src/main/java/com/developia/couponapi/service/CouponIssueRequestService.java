@@ -18,4 +18,12 @@ public class CouponIssueRequestService {
         }
     }
 
+    // db 락 적용
+    public void issueRequestWithMysqlLock(Long couponId, Long userId) {
+        couponIssueService.issueWithLock(couponId, userId);
+    }
+
+    // 분산락 적용
+    public void issueRequestWithRedisLock() {
+    }
 }
