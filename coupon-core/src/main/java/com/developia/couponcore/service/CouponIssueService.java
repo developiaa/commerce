@@ -42,14 +42,14 @@ public class CouponIssueService {
     }
 
     @Transactional
-    public void saveCouponIssue(Long couponId, Long userId) {
+    public CouponIssue saveCouponIssue(Long couponId, Long userId) {
         checkAlreadyIssuance(couponId, userId);
         CouponIssue issue = CouponIssue.builder()
                 .couponId(couponId)
                 .userId(userId)
                 .build();
 
-        couponIssueJpaRepository.save(issue);
+        return couponIssueJpaRepository.save(issue);
     }
 
     private void checkAlreadyIssuance(long couponId, long userId) {
